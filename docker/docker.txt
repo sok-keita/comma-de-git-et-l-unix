@@ -1,0 +1,66 @@
+python3.9 -m venv nom_projet: pour creer un evironement virtuel pour son project
+
+***Infrastructure : c'est un machine réelle (machine,serveur,serveur cloud)
+
+***Hyerviseur: un controleur de machine virtuelle
+
+
+************************************************************************************************
+                                    QUELQUES COMMANDES DOCKER
+************************************************************************************************
+
+1-docker pull nom_image:tag(version) : pour intaller une image docker
+
+2-docker image ls : lister toutes les images
+
+3-docker container ls :lister tout les container non actifs (on peut y aujouter l'option <<-a>> pour lister tout)
+
+4-docker run nom_image:tag : pour creer un container
+
+NB:
+    **si vous ne donnez aucune instruction à un container il s'arrete automatiquement
+    **cette commande cree autant de container qu'on souhaite
+    **on peut aussi creer un container en mode interactif en y ajoutant l'option <<-it>> commande suit:
+        docker run -it nom_image:tag
+    **on peut aussi créer et container en mode detacher (en arrière) plan tout en utilisant docker run -it -d nom_image:tag
+
+5-docker stop container_id : pour stoper un container
+
+6-docker system prune :Pour netoyer le systeme
+
+7-docker build -t nom_image_a_creeer repertoire : permete de creer sa propre image docker depuis un dokerfile cree dans son projet
+
+8-doccker tag nom_image_source:tag  nom_profil/nom_image_sur_hub:tag :permet de creer un lien entre deux images(en local et qui doit etre partagee)
+    **NB: on peut aussir utiliser l'id du conteneur à la place son nom si on ne connais pas son nom
+
+9-docker push nom_profil/nom_image_sur_hub:tag: pour envoyer son image sur le hub
+
+10-docker search nom_image : pour chercher une image en ligne de commande
+
+
+
+**********************************************************************************************************
+                                    Utilisation du cocker-compose
+**********************************************************************************************************
+
+**Remarque : les commades docker-composer sont très similaires à du docker.
+        ex: télécharger une imae
+
+            *docker : docker pull
+            *docker-compose ! docker-compose pull
+        
+**Quelques commandes importantes du docker compose
+
+1-docker-composer up : pour lancer la creation de l'ensemble des conteneurs?On peut aussi utiliser l'argument -d pour les faire tourner en bg
+
+2-docker-compose ps: pour voir si l'ensemble des conteneurs est en bon etat fonctionnel.
+
+3-docker-compose logs -f --tail 5 : pour afficher les logs des contenair sur les 5 premieres lignes.
+
+4-docker-compose stop : pour arreter la stak du docker-compose
+
+5-docker-compose down : pour supprimer l'ensemble de la stak dockeer-compose
+
+6-docker-compose config : permet de valider la synthaxe du fichier docker-compose.yml
+
+7-
